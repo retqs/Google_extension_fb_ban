@@ -1,0 +1,92 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>widget</title>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="popup">
+      <header class="popupHeader">
+        <h1 class="popupHeader__title">АнтиФейк</h1>
+        <h3 class="popupHeader__subTitle">
+          Виявляємо фейковi сторiнки у Facebook
+        </h3>
+        <nav class="popupMenu">
+          <button class="popupMenuBtn active" data-tab="form">
+            Відправити фейк
+          </button>
+          <button class="popupMenuBtn" data-tab="list">топ аккаунтiв</button>
+        </nav>
+      </header>
+      <main class="popupBody">
+        <section class="formSection">
+          <div class="popupDoneWindow">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="100"
+              height="100"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.25 16.518l-4.5-4.319 1.396-1.435 3.078 2.937 6.105-6.218 1.421 1.409-7.5 7.626z"
+              />
+            </svg>
+            <h2 class="popupDoneWindow__title">Отримали, дякуємо!</h2>
+            <button class="popupDoneWindow__btn">
+              Надicлати ще один профiль
+            </button>
+          </div>
+
+          <form class="form" id="form">
+            <h5 class="form__title">
+              Вiдправ троля в нашу базу,а ми допоможемо йому знайти свiй бан 😎
+            </h5>
+            <input
+              class="formInput"
+              type="text"
+              placeholder="Посилання на бота"
+              id="url"
+            />
+            <input
+              class="formInput"
+              type="text"
+              placeholder="Коментар"
+              id="comment"
+            />
+            <button class="formSubmit" type="submit">Надicлати!</button>
+          </form>
+          <div class="popupBody__hint">
+            <a href="javascript:void(0)" class="hint"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2.033 16.01c.564-1.789 1.632-3.932 1.821-4.474.273-.787-.211-1.136-1.74.209l-.34-.64c1.744-1.897 5.335-2.326 4.113.613-.763 1.835-1.309 3.074-1.621 4.03-.455 1.393.694.828 1.819-.211.153.25.203.331.356.619-2.498 2.378-5.271 2.588-4.408-.146zm4.742-8.169c-.532.453-1.32.443-1.761-.022-.441-.465-.367-1.208.164-1.661.532-.453 1.32-.442 1.761.022.439.466.367 1.209-.164 1.661z"
+                />
+              </svg>
+              Чому фейки - це погано?</a
+            >
+          </div>
+        </section>
+        <section class="listSection">
+          <ul class="usersList"></ul>
+        </section>
+      </main>
+      <footer class="popupFooter">
+        <h5 class="popupFooter__title">
+          Copyright &copy; 2020 АнтиФейк,всi права захищено
+        </h5>
+      </footer>
+    </div>
+    <script src="./widget.js"></script>
+  </body>
+</html>

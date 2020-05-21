@@ -1,0 +1,24 @@
+{
+  "manifest_version": 2,
+  "name": "FbTrollsBan",
+  "version": "0.001",
+
+  "icons": {
+    "128": "./icons/defaultIcon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["getUser.js", "widget.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "permissions": ["activeTab", "*://*/*", "tabs", "storage"],
+  "browser_action": {
+    "default_title": "FbTrollsBan",
+    "default_icon": "./icons/defaultIcon.png",
+    "default_popup": "index.html"
+  }
+}

@@ -1,0 +1,291 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+:root {
+  --blue: #4176e3;
+  --white: #fff;
+  --dGrey: #bdbdbd;
+}
+
+.popup {
+  width: 250px;
+}
+
+.popupHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: linear-gradient(to right, #5289e3, #3751b0);
+  border-radius: 15px 15px 0 15px;
+  position: relative;
+}
+
+.popupHeader::before {
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background: #3751b0;
+  right: 0;
+  bottom: -20px;
+  z-index: -1;
+}
+
+.popupHeader__title {
+  margin: 10px 0 5px 0;
+  color: #fff;
+  font-size: 20px;
+}
+
+.popupHeader__subTitle {
+  color: var(--white);
+  opacity: 0.7;
+}
+
+.popupMenu {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popupMenuBtn {
+  background: none;
+  outline: none;
+  color: var(--dGrey);
+  position: relative;
+  text-transform: uppercase;
+  height: 100%;
+  border: none;
+  font-weight: 600;
+  font-size: 10px;
+  padding: 0 5px;
+  cursor: pointer;
+
+  margin: 0 10px;
+}
+
+.active {
+  color: var(--white);
+}
+
+.active::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: #a9bee4;
+}
+
+.popupHeader__subTitle {
+  font-size: 10px;
+}
+
+.popupBody {
+  height: 350px;
+  border-radius: 0 15px 0 0;
+  background: var(--white);
+  position: relative;
+}
+
+.formSection {
+  display: block;
+}
+
+.popupDoneWindow {
+  position: absolute;
+  height: 75%;
+  width: 100%;
+  background: var(--white);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+}
+
+.popupDoneWindow svg {
+  margin-bottom: 20px;
+  fill: #63b93a;
+}
+
+.popupDoneWindow__title {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.popupDoneWindow__btn {
+  margin-top: 20px;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  background: var(--blue);
+  border-radius: 5px;
+  border: none;
+  color: var(--white);
+}
+
+.form__title {
+  text-align: center;
+  font-size: 12px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  height: 270px;
+}
+
+.form > * {
+  margin-top: 20px;
+}
+
+.formInput {
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  background: #f3f4f8;
+  padding: 10px;
+  font-size: 14px;
+}
+
+.formSubmit {
+  background: none;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 0;
+  background: var(--blue);
+  border-radius: 5px;
+  border: none;
+  color: var(--white);
+}
+
+.popupBody__hint {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.hint {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--blue);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hint svg {
+  fill: var(--blue);
+  margin-right: 5px;
+}
+
+.popupFooter {
+  height: 40px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.popupFooter::before {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 90%;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  background: var(--dGrey);
+}
+
+.popupFooter__title {
+  font-weight: 500;
+  text-align: center;
+  color: var(--dGrey);
+}
+
+.listSection {
+  display: none;
+  position: relative;
+}
+
+.usersList {
+  height: 100%;
+  width: 100%;
+  padding: 20px 0;
+}
+
+.user {
+  height: 45px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user:not(:first-child) {
+  margin-top: 20px;
+}
+
+.userAvatar {
+  position: relative;
+
+  height: 100%;
+  width: 45px;
+}
+
+.userAvatar img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  background: grey;
+  display: flex;
+  align-items: center;
+}
+
+.userInfo {
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.userInfo a {
+  text-decoration: none;
+  color: #333;
+  font-size: 13px;
+}
+
+.user__index {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: #d25644;
+  color: var(--white);
+  border: 1px solid var(--white);
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+}
