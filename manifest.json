@@ -12,10 +12,7 @@
       "js": ["getUser.js", "widget.js"]
     }
   ],
-  "background": {
-    "scripts": ["background.js"]
-  },
-  "permissions": ["activeTab", "*://*/*", "tabs", "storage"],
+  "permissions": ["activeTab", "*://*/*", "tabs", "storage", "history"],
   "browser_action": {
     "default_title": "FbTrollsBan",
     "default_icon": "./icons/defaultIcon.png",

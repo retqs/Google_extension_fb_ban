@@ -1,15 +1,11 @@
-//http://multiwpcms.biz.ua/people_checker/index.php
-
-const apiURL = 'http://multiwpcms.biz.ua/people_checker/index.php';
+const apiURL = 'http://multiwpcms.biz.ua/people_checker/index.php?type=read';
 
 let bot;
 
 chrome.tabs.onUpdated.addListener(function (tabId, info) {
-  console.log(info, 'info from tab');
   if (info.status === 'complete') {
     chrome.storage.sync.get(['bot'], function (items) {
       bot = items.bot;
-      console.log(items);
     });
   }
 });
@@ -17,7 +13,6 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
 chrome.tabs.query({active: true, currentWindow: true}, function (tabs) {
   chrome.storage.sync.get(['bot'], function (items) {
     bot = items.bot;
-    console.log(items);
   });
 });
 
@@ -45,13 +40,11 @@ commentInput.addEventListener(
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
-
   const res = await fetch(
-    `http://multiwpcms.biz.ua/people_checker/index.php?type=1234&key=tpghmerogime359348fhnskhioewhiuo34iofhiuwehfuieghiueb34b___fgerpigj34oihvgiu434__4-%%&first_name=${bot.first_name}&last_name=${bot.last_name}&href=${bot.href}&link=${inputValues.url}`
+    `http://multiwpcms.biz.ua/people_checker/index.php?type=send&key=tpghmerogime359348fhnskhioewhiuo34iofhiuwehfuieghiueb34b___fgerpigj34oihvgiu434__4-%%&first_name=${bot.first_name}&last_name=${bot.last_name}&href=${bot.href}&link=${inputValues.url}`
   );
 
   if (res.status === 200) completeWindow.style['visibility'] = 'visible';
-  console.log(res);
 });
 
 const listItemTemplate = ({first_name, href, image, second_name}, i) => `
@@ -70,6 +63,7 @@ const listItemTemplate = ({first_name, href, image, second_name}, i) => `
 
 async function getUsersList() {
   const res = await (await fetch(apiURL)).json();
+
   res.accounts.map((user, i) =>
     usersList.insertAdjacentHTML('beforeend', listItemTemplate(user, i))
   );

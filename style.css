@@ -265,6 +265,7 @@
 .userInfo {
   margin-left: 10px;
   font-size: 14px;
+  width: 50%;
 }
 
 .userInfo a {
